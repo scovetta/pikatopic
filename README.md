@@ -3,7 +3,13 @@
 
 ## Quickstart
 
-A RabbitMQ service ( https://www.rabbitmq.com/ ) must be running. You also need the pika library.
+A RabbitMQ service ( https://www.rabbitmq.com/ ) must be running.
+
+You also need the pika library.
+
+```
+pip install pika
+```
 
 Run this, it will listen for new messages and not exit unless you kill it.
 
@@ -19,13 +25,23 @@ $ ./examples/send.py
 
 You should see output from `recv.py`.
 
+If your rabbit server is running on a different machine, you can set the `PIKATOPIC_HOST` environment variable. For example:
+
+```
+$ PIKATOPIC_HOST=172.17.0.2 ./examples/recv.py
+```
+
+```
+$ PIKATOPIC_HOST=172.17.0.2 ./examples/send.py
+```
+
 ## Configuration
 
 You will probably need to set the host name to connect to your RabbitMQ server. The username, password and exchange are all set to defaults which work for a generic server install.
 
 Default values:
 
-- host is `localhost`
+- host is `localhost` OR the `PIKATOPIC_HOST` envariable if that is set
 - username is `guest`
 - password is `guest`
 - exchange is `amq.topic`
@@ -45,6 +61,8 @@ pikatopic.DEFAULT_EXCHANGE = 'monster'
 ## Pika Library
 
 Pikatopic depends on the pika libary.
+
+- http://pika.readthedocs.io/
 
 ```
 $ pip install pika

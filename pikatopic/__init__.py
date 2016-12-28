@@ -3,6 +3,7 @@
 import pika
 import pika.credentials
 import json
+import os
 
 
 # python2 and 3 string type check - from http://stackoverflow.com/questions/11301138/how-to-check-if-variable-is-string-with-python-2-and-3-compatibility
@@ -18,7 +19,7 @@ DEFAULT_USERNAME = 'guest'
 DEFAULT_PASSWORD = 'guest'
 DEFAULT_EXCHANGE = 'amq.topic'
 
-DEFAULT_HOST = 'localhost'
+DEFAULT_HOST = os.environ.get('PIKATOPIC_HOST', 'localhost')
 
 
 class PikaTopic(object):
