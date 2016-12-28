@@ -5,37 +5,7 @@ Pika is a good general purpose library for interacting with a RabbitMQ server. P
 
 Additionally, PikaTopic will handle json conversion when sending and receiving data.
 
-## Quickstart
-
-```
-pip install pikatopic
-```
-
-A RabbitMQ service ( https://www.rabbitmq.com/ ) must be running.
-
-Run this, it will listen for new messages and not exit unless you kill it.
-
-```
-$ ./examples/recv.py
-```
-
-In another window, run this:
-
-```
-$ ./examples/send.py
-```
-
-You should see output from `recv.py`.
-
-If your rabbit server is running on a different machine, you can set the `PIKATOPIC_HOST` environment variable. For example:
-
-```
-$ PIKATOPIC_HOST=172.17.0.2 ./examples/recv.py
-```
-
-```
-$ PIKATOPIC_HOST=172.17.0.2 ./examples/send.py
-```
+See https://github.com/AnimationMentor/pikatopic for more usage examples.
 
 ## Configuration
 
@@ -65,9 +35,6 @@ Pikatopic depends on the pika libary.
 
 - http://pika.readthedocs.io/
 
-```
-$ pip install pika
-```
 
 ## Examples
 

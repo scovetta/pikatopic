@@ -9,11 +9,12 @@ all:
 clean:
 	rm -rf README.rst dist *.egg-info
 
-README.rst: README.md
-	pandoc README.md -o README.rst
+README.rst: README-pypi.md
+	pandoc README-pypi.md -o README.rst
 
 run-sdist: README.rst
 	python setup.py sdist
 
 run-upload-to-pypi:
-	@echo "not implemented"
+	python setup.py register sdist upload
+	
