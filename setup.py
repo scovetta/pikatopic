@@ -1,7 +1,7 @@
 from setuptools import setup
 
 setup(name='pikatopic',
-      version='1.0.1',
+      version='1.0.2',
       description='A convenience layer atop Pika for use with RabbitMQ topic exhanges.',
       url='http://github.com/AnimationMentor/pikatopic',
       author='Reed Wade for Artella.com',

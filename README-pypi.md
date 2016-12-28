@@ -1,5 +1,5 @@
 
-# PikaTopic - a convenience layer atop Pika for use with RabbitMQ topic exhanges
+# PikaTopic - a convenience layer atop Pika for use with RabbitMQ topic exchanges
 
 Pika is a good general purpose library for interacting with a RabbitMQ server. PikaTopic is a simpler, limited interface which can be used when you just need to send or receive messages using a topic exchange. 
 
