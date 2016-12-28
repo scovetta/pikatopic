@@ -12,9 +12,9 @@ clean:
 README.rst: README-pypi.md
 	pandoc README-pypi.md -o README.rst
 
-run-sdist: README.rst
+run-sdist: clean README.rst
 	python setup.py sdist
 
-run-upload-to-pypi:
+run-upload-to-pypi: clean README.rst
 	python setup.py register sdist upload
 	
