@@ -44,9 +44,9 @@ You will probably need to set the host name to connect to your RabbitMQ server. 
 Default values:
 
 - host is `localhost` OR the `PIKATOPIC_HOST` envariable if that is set
-- username is `guest`
-- password is `guest`
-- exchange is `amq.topic`
+- username is `guest` OR the `PIKATOPIC_USERNAME` envariable if that is set
+- password is `guest` OR the `PIKATOPIC_PASSWORD` envariable if that is set
+- exchange is `amq.topic` OR the `PIKATOPIC_EXCHANGE` envariable if that is set
 
 These may be overridden by passing any of these arguments to the `PikaTopic` class initialiser or you can change them at the module level by:
 

@@ -15,9 +15,9 @@ except NameError:
 #
 # These username/password/exchange settings work fine for a normal default RabbitMQ installation.
 #
-DEFAULT_USERNAME = 'guest'
-DEFAULT_PASSWORD = 'guest'
-DEFAULT_EXCHANGE = 'amq.topic'
+DEFAULT_USERNAME = os.environ.get('PIKATOPIC_USERNAME', 'guest')
+DEFAULT_PASSWORD = os.environ.get('PIKATOPIC_PASSWORD', 'guest')
+DEFAULT_EXCHANGE = os.environ.get('PIKATOPIC_EXCHANGE', 'amq.topic')
 
 DEFAULT_HOST = os.environ.get('PIKATOPIC_HOST', 'localhost')
 
@@ -56,6 +56,8 @@ class PikaTopic(object):
     def open(self):
         if self.no_rabbit_server:
             return self
+
+        # print self.host, self.username, self.password
 
         self.connection = pika.BlockingConnection(pika.ConnectionParameters(
             host=self.host,
