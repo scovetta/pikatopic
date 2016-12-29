@@ -13,10 +13,10 @@ import pikatopic
 # pikatopic.DEFAULT_HOST = '172.17.0.2'
 
 def handler(routing_key, message, message_data):
-    if message_data:
-        print("%r data=%r" % (routing_key, message_data))
-    else:
+    if message_data == None:
         print("%r text=%r" % (routing_key, message))
+    else:
+        print("%r data=%r" % (routing_key, message_data))
     return "exit" != message
 
 
