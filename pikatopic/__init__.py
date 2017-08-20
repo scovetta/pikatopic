@@ -129,7 +129,7 @@ class PikaTopic(object):
             body_data = None
 
             if properties.content_type == 'application/json':
-                body_data = json.loads(body)
+                body_data = json.loads(body.decode('utf-8'))
 
             if not handler(method.routing_key, body, body_data):
                 # handler returned false, cancel the consumer
